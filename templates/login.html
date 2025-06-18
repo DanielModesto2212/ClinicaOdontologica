@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e3360bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-global-container">
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="../static/images/logo2.png" alt="" srcset="">
+            </div>
+            <div class="container-inputs">
+                <div class="login-inputs">
+                    <div class="login-title">
+                        <h3>INGRESE SU CUENTA</h3>
+                    </div>
+                    <form action="/login" method="POST">
+                        <div class="container-username">
+                            <input type="text" id="username" name="username" placeholder="Nombre de usuario">
+                        </div>
+                        <div class="container-password">
+                            <input type="password" id="password" name="password" placeholder="Contraseña">
+                        </div>
+                        <div class="login-button-container">
+                            <button type="submit">Iniciar sesion</button>
+                        </div>
+                    </form>
+                    <div class="forgot-password-container">
+                        <a href="/forgotPassword">¿OLVIDASTE TU CONTRASEÑA?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

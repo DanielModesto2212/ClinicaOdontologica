@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e3360bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/historias_clinicas.css">
+    <title>Historias Clínicas</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACION -->
+    <div class="global-nav-bar-container">
+        <div class="nav-bar-container">
+            <div class="logo-container">
+                <img src="../static/images/logo2.png" alt="">
+            </div>
+    
+            <div class="menu-container">
+                <div class="dropdown">
+                    <a href="#" id="userIcon">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="/dashboard">Mi perfil</a>
+                        <a href="/agendarCita">Agendar Cita</a>
+                        <a href="/historias_clinicas">Historias Clinicas</a>
+                        <a href="/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="global-history-container">
+        <div class="history-title">
+            <h3>HISTORIAS CLINICAS</h3>
+        </div>
+
+        <div class="history-container">
+            {% for historia in historias %}
+            <div class="historia">
+                <div class="history-content"><span class="field-label">Fecha:</span> <span class="field-value">{{ historia.fecha_formateada }}</span></div>
+                <div class="history-content"><span class="field-label">Motivo:</span> <span class="field-value">{{ historia.analisis }}</span></div>
+                <div class="history-content"><span class="field-label">Diagnóstico:</span> <span class="field-value">{{ historia.id_diagnostico }} - {{ historia.nombre_diagnostico }}</span></div>
+                <div class="history-content"><span class="field-label">Procedimientos:</span> <span class="field-value">{{ historia.id_procedimiento }} - {{ historia.nombre_procedimiento }}</span></div>
+                <div class="history-content"><span class="field-label">Medicamentos:</span> <span class="field-value">{{ historia.id_medicamento }} - {{ historia.nombre_medicamento }}</span></div>
+                <!-- Agrega más campos si lo necesitas -->
+            </div>
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

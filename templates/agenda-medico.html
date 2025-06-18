@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e3360bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/agenda-doctor.css">
+    <title>Mi agenda</title>
+</head>
+<body>
+  <!-- BARRA DE NAVEGACION -->
+  <div class="global-nav-bar-container">
+    <div class="nav-bar-container">
+      <div class="logo-container">
+        <img src="../static/images/logo2.png" alt="">
+      </div>
+
+      <div class="menu-container">
+        <div class="dropdown">
+          <a href="#" id="userIcon">
+            <i class="fa-solid fa-bars"></i>
+          </a>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="/dashboard">Mi perfil</a>
+            <a href="/verAgenda">Ver agenda</a>
+            <a href="/logout">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="global-container-dates">
+    <div class="container-dates">
+      <div class="title-section">
+        <i class="fa-solid fa-calendar"></i>
+        <h3>CITAS AGENDADAS</h3>
+      </div>
+      
+      <div class="container-appointment">
+        <div class="appointment">
+          <div class="name-user">
+            <span>DANIEL MAURICIO MODESTO RAMIREZ</span>
+          </div>
+          <div class="hour-date">
+            <span>14:00 PM</span>
+          </div>
+          <div class="type-date">
+            <span>CONSULTA EXTERNA</span>
+          </div>
+          <button class="button-date" type="submit">ATENDER PACIENTE</button>
+        </div>
+        <div class="appointment">
+          <div class="name-user">
+            <span>CRISTIAN RAMIREZ</span>
+          </div>
+          <div class="hour-date">
+            <span>14:30 PM</span>
+          </div>
+          <div class="type-date">
+            <span>IMAGENES DIAGNOSTICA</span>
+          </div>
+          <button class="button-date" type="submit">ATENDER PACIENTE</button>
+        </div>
+        <div class="appointment">
+          <div class="name-user">
+            <span>JUAN TORO</span>
+          </div>
+          <div class="hour-date">
+            <span>15:00 PM</span>
+          </div>
+          <div class="type-date">
+            <span>PROCEDIMIENTO</span>
+          </div>
+          <button class="button-date" type="submit">ATENDER PACIENTE</button>
+        </div>
+        <div class="appointment">
+          <div class="name-user">
+            <span>DANIEL MAURICIO MODESTO RAMIREZ</span>
+          </div>
+          <div class="hour-date">
+            <span>17:00 PM</span>
+          </div>
+          <div class="type-date">
+            <span>CONSULTA EXTERNA</span>
+          </div>
+          <button class="button-date" type="submit">ATENDER PACIENTE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../static/js/app.js"></script>
+</body>
+</html>

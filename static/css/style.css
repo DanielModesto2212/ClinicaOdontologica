@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Sans", sans-serif;
+}
+:root{
+    --color1: #08556f;
+    --color2: #246c87;
+    --color3: #40839f;
+    --color4: #5b9ab7;
+    --color5: #77b1cf;
+    --color6: #D9D9D9;
+}
+
+/* ----------------BARRA DE NAVEGACION---------------- */
+.global-nav-bar-container{
+    background-color: var(--color2);
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+}
+.nav-bar-container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-container{
+    height: 13vh;
+}
+.logo-container img{
+    height: 13vh;
+}
+
+.menu-container{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu-container i{
+    font-size: 50px;
+    color: black;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}

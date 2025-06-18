@@ -1,0 +1,160 @@
+*{
+    box-sizing: border-box;
+}
+.global-dates-container{
+    margin: 40px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+/*-------------CITAS ACTIVAS-------------*/
+.container-dates{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.dates-actives{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color6);
+    height: 50px;
+}
+.dates-actives span{
+    width: 240px;
+    text-align: center;
+}
+.dates-actives button{
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dates-actives button:hover{
+    background-color: rgb(173, 1, 1);
+}
+
+/*-------------AGENDAR CITAS-------------*/
+.container-new-dates{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.container-selector-dates{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color6);
+    margin: 10px 0 20px 0;
+}
+.container-calendar, .container-type-date, .container-hour-date{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+.type-date{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.container-button-newDate{
+    width: 30%;
+}
+.container-button-newDate button{
+    width: 100%;
+    height: 40px;
+    background-color: var(--color2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container-button-newDate button:hover{
+    background-color: var(--color1);
+}
+.all-hours-date{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.hour-date{
+    width: 40%;    
+}
+
+.hour-date button{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-hour.selected {
+    background-color: var(--color3);
+    color: white;
+    border: 1px solid #000;
+}
+
+/*-------------ESTILO DEL SELECTOR-------------*/
+.type-date select {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: inherit;
+    appearance: none; /* Quita el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10"><path fill="%23333" d="M1 1l6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.type-date select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/*-------------ESTILO DEL CALENDARIO-------------*/
+input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none; /* Safari/Chrome */
+    
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #333;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="date"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}

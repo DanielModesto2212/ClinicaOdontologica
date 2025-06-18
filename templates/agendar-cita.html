@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e3360bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/agendar-cita.css">
+    <title>Agenda tu cita</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACION -->
+    <div class="global-nav-bar-container">
+        <div class="nav-bar-container">
+            <div class="logo-container">
+                <img src="../static/images/logo2.png" alt="">
+            </div>
+    
+            <div class="menu-container">
+                <div class="dropdown">
+                    <a href="#" id="userIcon">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="/dashboard">Mi perfil</a>
+                        <a href="/agendarCita">Agendar Cita</a>
+                        <a href="/historias_clinicas">Historias Clinicas</a>
+                        <a href="/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CITAS ACTIVAS -->
+    <div class="global-dates-container">
+        <div class="container-dates">
+            <div class="dates-title">
+                <h3>MIS CITAS ACTIVAS</h3>
+            </div>
+            {% if citas %}
+                {% for cita in citas %}
+                <div class="dates-actives">
+                    <span>{{ cita.fecha_cita.strftime('%d/%m/%Y') }}</span>
+                    <span>{{ cita.hora_cita.strftime('%H:%M %p') }}</span>
+                    <span>{{ cita.nombre_tipo_cita }}</span>
+                    <form method="POST" action="{{ url_for('cancelarCita') }}" style="display:inline;">
+                        <input type="hidden" name="id_cita" value="{{ cita.id_cita }}">
+                        <button type="submit" onclick="return confirm('¿Estás seguro de cancelar esta cita?')">Cancelar cita</button>
+                    </form>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="dates-actives">No tienes citas activas</p>
+            {% endif %}
+        </div>
+
+        <!-- AGENDAR CITA -->
+        <div class="container-new-dates">
+            <form id="agendarForm" method="POST" action="{{ url_for('agendarCita') }}">
+                <div class="title-new-dates">
+                    <h3>AGENDA TU CITA</h3>
+                </div>
+                <div class="container-selector-dates">
+                    <div class="container-calendar">
+                        <label for="">Día de consulta:</label>
+                        <input type="date" name="fecha_cita" id="miFecha" required>
+                    </div>
+
+                    <div class="container-type-date">
+                        <div class="type-date">
+                            <label for="">Tipo de consulta:</label>
+                            <select name="tipo_cita" id="type-date" required>
+                                <option value="1">Consulta Externa</option>
+                                <option value="2">Procedimiento</option>
+                                <option value="3">Imágenes Diagnósticas</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="container-hour-date">
+                        <label>Hora de consulta:</label>
+                        <div class="all-hours-date">
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="07:00:00">7:00 AM</button>
+                            </div>
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="08:00:00">8:00 AM</button>
+                            </div>
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="09:00:00">9:00 AM</button>
+                            </div>
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="10:00:00">10:00 AM</button>
+                            </div>
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="11:00:00">11:00 AM</button>
+                            </div>
+                            <div class="hour-date">
+                                <button type="button" class="btn-hour" data-hora="12:00:00">12:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Input oculto para almacenar la hora seleccionada -->
+                <input type="hidden" name="hora_cita" id="hora_cita">
+
+                <div class="container-button-newDate">
+                    <button type="submit">AGENDAR CITA</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

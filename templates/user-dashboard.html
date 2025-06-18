@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e3360bc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+    <title>Mi perfil</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACION -->
+    <div class="global-nav-bar-container">
+        <div class="nav-bar-container">
+            <div class="logo-container">
+                <img src="../static/images/logo2.png" alt="">
+            </div>
+    
+            <div class="menu-container">
+                <div class="dropdown">
+                    <a href="#" id="userIcon">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="/dashboard">Mi perfil</a>
+                        <a href="/agendarCita">Agendar Cita</a>
+                        <a href="/historias_clinicas">Historias Clinicas</a>
+                        <a href="/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATOS PRINCIPALES -->
+    <div class="information-global-container">
+        <div class="information-container">
+            <div class="user-img-container">
+                <img src="../static/images/user-img.jpg" alt="">
+                <div class="overlay" style="font-family: Fira Sans, sans-serif;">Cambiar imagen</div>
+                <input type="file" id="file-input" style="display: none;">
+            </div>
+            <div class="user-information-container">
+                <div class="user-name-container">
+                    <span>{{ paciente.nombre_paciente }}</span>
+                </div>
+                <div class="user-information-container2">
+                    <div class="user-age-container">
+                        <span>{{ paciente.edad_paciente }} AÑOS</span>
+                    </div>
+                    <div class="user-rh-container">
+                        <span>{{ paciente.tipo_sangre }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- DATOS SECUNDARIOS -->
+        <form action="" method="POST" class="secundary-information-container">
+            <div class="user-phone-container">
+                <label for="">TELEFONO:</label>
+                <input type="text" name="telefono" value="{{ paciente.telefono_paciente }}" placeholder="Numero telefonico">
+            </div>
+            <div class="user-address-container">
+                <label for="">DIRECCION DE RESIDENCIA:</label>
+                <input type="text" name="direccion" value="{{ paciente.direccion_paciente }}" placeholder="Direccion de residencia">
+            </div>
+            <div class="user-email-container">
+                <label for="">CORREO ELECTRONICO:</label>
+                <input type="email" name="correo" value="{{ paciente.correo_paciente }}" placeholder="example@exameple.com">
+            </div>
+            <div class="saveInformation-button-container">
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>
