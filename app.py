@@ -1,15 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import mysql.connector
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 app.secret_key = 'clave_secreta'
 
+host = os.getenv("DB_HOST")
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+database = os.getenv("DB_NAME")
+
 db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="",
-    database="bd_odontologia"
+    host=host,
+    user=user,
+    password=password,
+    database=database
 )
 cursor = db.cursor(dictionary=True)
 
